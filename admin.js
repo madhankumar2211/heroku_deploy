@@ -166,7 +166,7 @@ router.get("/user",verifyToken, function (req, res) {
 
 })
 
-app.get("/vieworder",verifyToken, (req, res) => {
+router.get("/vieworder",verifyToken, (req, res) => {
     let token = req.headers.authorization.split(' ')[1];
     const payload =  jwt.verify(token, 'secret_key_goes');
     MongoClient.connect(url, function (err, conn) {
