@@ -125,6 +125,24 @@ router.get("/vehicleviewnew",(req,res)=>{
     })
 })
 
+router.get("/user",verifyToken, function (req, res) {
+    let token = req.headers.authorization.split(' ')[1];
+    const payload =  jwt.verify(token, 'secret_key_goes');   
+
+    MongoClient.connect(url, function (err, con) {
+
+        var db = con.db("merit")
+
+        db.collection('packers_users').findOne({ _id: ObjectId(payload._id) }, function (err, data) {
+
+            res.send(data)
+
+        })
+
+    })
+
+})
+
 
 
 module.exports = router;
