@@ -10,7 +10,18 @@ export class HomeComponent implements OnInit {
 
   constructor(public uS : UsersService) { }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {  
+    this.uS.vehicle().subscribe((data) => {
+      console.log(data);
+      
+      this.uS.vechiles = data
+
+    })  
+    this.uS.loggedUser().subscribe((data) => {
+      console.log(data);
+      
+      this.uS.user = data
+    })
   }
 
 }

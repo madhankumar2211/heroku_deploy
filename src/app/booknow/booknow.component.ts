@@ -39,6 +39,8 @@ export class BooknowComponent implements OnInit {
     if(!this.rs.loggedIn()){
       alert('You are a not Logged In user.....Still you can get Quote from us.\n For booking you need to log in..')
     }
+    this.vechile = this.rs.vechiles;
+
 
     //console.log(Country.getAllCountries())
     //console.log(State.getStatesOfCountry("IN"))
