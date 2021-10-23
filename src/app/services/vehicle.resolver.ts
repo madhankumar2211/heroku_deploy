@@ -18,7 +18,9 @@ export class VehicleResolver implements Resolve<boolean> {
   constructor(public uS:UsersService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    this.uS.vehicle().subscribe((data) => {    
+    this.uS.vehicle().subscribe((data) => {  
+      console.log(data);
+        
       this.vehicles = data
     })
     return of(this.vehicles);
