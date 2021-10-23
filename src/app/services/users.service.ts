@@ -87,7 +87,7 @@ export class UsersService {
     return this.http.get<any>('/admin/vehicleviewnew');
   }
 
-  //payment
+  //payment 
   addpayment(x:any) {
     return this.http.post<any>('/addpaymentinfo', x);
   }
