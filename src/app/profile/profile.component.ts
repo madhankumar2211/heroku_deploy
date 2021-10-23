@@ -36,16 +36,16 @@ export class ProfileComponent implements OnInit {
     this.psw = p.repeat(5)
 
     // user details
-    this.uS.profile().subscribe((data) => {
-      this.router.navigateByUrl(data['link'])
-    },(err) =>{
-        alert("Your session is expired please login again.")
-        this.uS.isloggedin.next(false)
-        localStorage.removeItem('token');
-        this.router.navigateByUrl(err.error['link'])
-        //console.log(err);
+    // this.uS.profile().subscribe((data) => {
+    //   this.router.navigateByUrl(data['link'])
+    // },(err) =>{
+    //     alert("Your session is expired please login again.")
+    //     this.uS.isloggedin.next(false)
+    //     localStorage.removeItem('token');
+    //     this.router.navigateByUrl(err.error['link'])
+    //     //console.log(err);
         
-      })
+    //   })
     //order details
     this.ps.getallorder().subscribe((o)=>{
       this.allorder = o;
