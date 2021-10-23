@@ -12,14 +12,9 @@ export class HeadComponent implements OnInit {
   loginstatus: boolean;
 
   constructor(public uS : UsersService,
-    public router : Router) {
-      this.uS.vehicle();
-      console.log(this.uS.vechiles);
-     }
+    public router : Router) {}
 
   ngOnInit(): void {
-    this.uS.vehicle();
-    console.log(this.uS.vechiles);
     this.uS.isloggedin.subscribe((stat)=>{this.loginstatus=stat})
   }
 

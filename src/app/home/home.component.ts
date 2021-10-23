@@ -9,7 +9,6 @@ import { UsersService } from '../services/users.service';
 export class HomeComponent implements OnInit {
 
   constructor(public uS : UsersService) { 
-    this.uS.vehicle();
     this.uS.loggedUser().subscribe((data) => {
       console.log(data);
       
@@ -17,10 +16,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {  
-    this.uS.vehicle();
-    console.log(this.uS.vechiles);
-    
+  ngOnInit(): void {     
   }
 
 }

@@ -11,6 +11,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { QuoteComponent } from './quote/quote.component';
 import { RegisterComponent } from './register/register.component';
 import { ServiceComponent } from './service/service.component';
+import { UsersResolver } from './services/users.resolver';
+import { VehicleResolver } from './services/vehicle.resolver';
 import { TrackingComponent } from './tracking/tracking.component';
 import { UpdateprofieComponent } from './updateprofie/updateprofie.component';
 import { WhychooseusComponent } from './whychooseus/whychooseus.component';
@@ -34,7 +36,10 @@ const routes: Routes = [
   },
   {
     path : 'Booknow',
-    component : BooknowComponent
+    component : BooknowComponent,
+    resolve : {
+      vh : VehicleResolver
+    }
   },
   {
     path : 'Tracking',
@@ -47,7 +52,10 @@ const routes: Routes = [
   {
     path : 'Profile',
     component : ProfileComponent,
-    canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    resolve : {
+      user : UsersResolver
+    }
   },
   {
     path : 'Login',

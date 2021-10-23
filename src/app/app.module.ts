@@ -26,6 +26,8 @@ import { UpdateprofieComponent } from './updateprofie/updateprofie.component';
 import { HeadComponent } from './head/head.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { HeadingComponent } from './heading/heading.component';
+import { UsersResolver } from './services/users.resolver';
+import { VehicleResolver } from './services/vehicle.resolver';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,7 @@ import { HeadingComponent } from './heading/heading.component';
       
     ])
     ],
-  providers: [{provide:HTTP_INTERCEPTORS ,useClass:AuthInterceptorService,multi :true}],
+  providers: [{provide:HTTP_INTERCEPTORS ,useClass:AuthInterceptorService,multi :true},VehicleResolver,HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

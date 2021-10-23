@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileService } from '../services/profile.service';
 import { UsersService } from '../services/users.service';
 
@@ -12,9 +12,12 @@ export class ProfileComponent implements OnInit {
   specifiedUser :any;
   constructor( public ps : ProfileService,
               public router : Router,
-              public uS : UsersService) 
+              public uS : UsersService,
+              public ur : ActivatedRoute) 
               { 
-                 this.specifiedUser = this.uS.user;
+                this.ur.data.subscribe((data) => {
+                  this.specifiedUser = data.user
+                })
               }
   user:any;
   allorder : any;
@@ -24,27 +27,10 @@ export class ProfileComponent implements OnInit {
   psw:any;
   
   ngOnInit(): void {
-
-    //console.log(this.specifiedUser);
-    
     const p: any = '*'
     this.psw = p.repeat(5)
-
-    // user details
-    // this.uS.profile().subscribe((data) => {
-    //   this.router.navigateByUrl(data['link'])
-    // },(err) =>{
-    //     alert("Your session is expired please login again.")
-    //     this.uS.isloggedin.next(false)
-    //     localStorage.removeItem('token');
-    //     this.router.navigateByUrl(err.error['link'])
-    //     //console.log(err);
-        
-    //   })
-    //order details
     this.ps.getallorder().subscribe((o)=>{
       this.allorder = o;
-      //console.log("All orders of the user",this.allorder);
       this.allorder.forEach(element => {
         if(element.Record_status == 1){
           this.count = false

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { City, Country, State } from 'country-state-city';
 import { UsersService } from '../services/users.service';
+import { VehicleResolver } from '../services/vehicle.resolver';
 
 @Component({
   selector: 'app-booknow',
@@ -13,8 +14,10 @@ export class BooknowComponent implements OnInit {
   vechile: any;    
 
 
-  constructor(private router: Router, public fb: FormBuilder, public rs: UsersService) { 
-    this.vechile = this.rs.vechiles;
+  constructor(private router: Router, public fb: FormBuilder, public rs: UsersService, public vr : ActivatedRoute) {
+    this.vr.data.subscribe((data) => {
+      this.vechile = data.vh
+    })
   }
 
   Fcity: any;
