@@ -9,19 +9,14 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  specifiedUser :any;
   constructor( public ps : ProfileService,
               public router : Router,
               public uS : UsersService) 
               { 
-
-                this.uS.loggedUser().subscribe((data) => {
-                  this.specifiedUser = data
-                  console.log(this.specifiedUser);
-                })       
+                 this.specifiedUser = this.uS.user;
               }
   user:any;
-  specifiedUser :any;
   allorder : any;
   count : boolean = true;
   completed : boolean = true;

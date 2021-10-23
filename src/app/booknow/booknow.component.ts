@@ -10,8 +10,12 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./booknow.component.css']
 })
 export class BooknowComponent implements OnInit {
+  vechile: any;    
 
-  constructor(private router: Router, public fb: FormBuilder, public rs: UsersService) { }
+
+  constructor(private router: Router, public fb: FormBuilder, public rs: UsersService) { 
+    this.vechile = this.rs.vechiles;
+  }
 
   Fcity: any;
   Tcity: any;
@@ -20,7 +24,6 @@ export class BooknowComponent implements OnInit {
   countries: any;  
   record: any;
   price: any;    
-  vechile: any;    
   Tlatlong: any;
   Flatlong: any;
   Products: any;
@@ -48,10 +51,7 @@ export class BooknowComponent implements OnInit {
 
 
 
-    this.rs.vehicle().subscribe((data) => {
-      this.vechile = data
-
-    })
+    
 
 
     this.bookingForm = this.fb.group({

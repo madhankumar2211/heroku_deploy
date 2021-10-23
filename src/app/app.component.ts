@@ -13,5 +13,9 @@ export class AppComponent {
     if(this.uS.loggedIn()){
       this.uS.autologin()
     }
+
+    this.uS.vehicle().subscribe((data) => {
+      this.uS.vechiles = data
+    })
    } 
 } 
