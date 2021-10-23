@@ -13,14 +13,13 @@ import { UsersService } from '../services/users.service';
   providedIn: 'root'
 })
 export class VehicleResolver implements Resolve<boolean> {
-  vehicles : any = "data";
 
   constructor(public uS:UsersService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    this.uS.vehicle().subscribe((data) => {  
-      this.vehicles = data 
+    var vehicles = this.uS.vehicle().subscribe((data) => {  
+      return data 
     })
-    return of(this.vehicles);
+    return of(vehicles);
   }
 }

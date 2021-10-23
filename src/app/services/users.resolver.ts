@@ -12,14 +12,12 @@ import { UsersService } from '../services/users.service';
   providedIn: 'root'
 })
 export class UsersResolver implements Resolve<boolean> {
-  users : any;
-
   constructor(private http: HttpClient,public uS:UsersService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    this.uS.loggedUser().subscribe((data) => {    
-      this.users = data
+    var users = this.uS.loggedUser().subscribe((data) => {    
+      return data
     })
-    return of(this.users);
+    return of(users);
   }
 }
