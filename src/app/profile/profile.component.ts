@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
   user:any;
   allorder : any;
   count : boolean = true;
-  completed : boolean = true;
+  completed : boolean = true; 
   cancelled : boolean = true; 
   psw:any;
   
