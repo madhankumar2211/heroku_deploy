@@ -12,7 +12,7 @@ app.use(express.static(__dirname + "/dist"))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const port = Process.env.PORT || 7080 ;
+const port = 7080 ;
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -24,6 +24,16 @@ const cors = require('cors');
 app.use(cors());
 
 
+app.get('/', (req, res) => {
+    MongoClient.connect(url, (err, conn) => {
+        var db = conn.db('merit');
+        db.collection('packers_users').find().toArray((err, data) => {
+            res.send(data)
+        })
+    })
+})
+
+app.get("/fav")
 //create
 app.post('/register', (req, res) => {
     var hashPassword = bcrypt.hashSync(req.body.psw, 8);
