@@ -5,14 +5,16 @@ let server = require('http').Server(app);
 
 const admin = require('./admin');
 
+var path = require('path');
+
 app.use('/admin',admin);
-app.use(express.static(__dirname + './dist/app/index.html'))
+app.use(express.static(__dirname + '/dist/app'))
 
 //body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const port = 7080 ;
+var port = process.env.PORT || 8080;
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -24,8 +26,8 @@ const cors = require('cors');
 app.use(cors());
 
 
-app.get('/', (req, res) => {
-    res.status(200).send("hii");
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/dist/app/index.html'));
 })
 
 //create
