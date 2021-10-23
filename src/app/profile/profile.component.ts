@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   allorder : any;
   count : boolean = true;
   completed : boolean = true;
-  cancelled : boolean = true;
+  cancelled : boolean = true; 
   psw:any;
   
   ngOnInit(): void {
