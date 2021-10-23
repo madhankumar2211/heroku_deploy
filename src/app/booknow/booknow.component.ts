@@ -18,6 +18,8 @@ export class BooknowComponent implements OnInit {
     console.log("hii");
     
     this.vr.data.subscribe((data) => {
+      console.log(data);
+      
       this.vechile = data.vh
     })
   }

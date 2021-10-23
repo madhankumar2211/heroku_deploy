@@ -63,7 +63,7 @@ import { VehicleResolver } from './services/vehicle.resolver';
       
     ])
     ],
-  providers: [{provide:HTTP_INTERCEPTORS ,useClass:AuthInterceptorService,multi :true},VehicleResolver,HttpClient],
+  providers: [{provide:HTTP_INTERCEPTORS ,useClass:AuthInterceptorService,multi :true},UsersResolver,VehicleResolver,HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
