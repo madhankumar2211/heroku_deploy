@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { QuoteComponent } from './quote/quote.component';
 import { RegisterComponent } from './register/register.component';
 import { ServiceComponent } from './service/service.component';
+import { OrderResolver } from './services/order.resolver';
 import { UsersResolver } from './services/users.resolver';
 import { VehicleResolver } from './services/vehicle.resolver';
 import { TrackingComponent } from './tracking/tracking.component';
@@ -54,7 +55,8 @@ const routes: Routes = [
     component : ProfileComponent,
     canActivate:[AuthGuard], 
     resolve : {
-      user : UsersResolver
+      user : UsersResolver,
+      order : OrderResolver
     }
   },
   {

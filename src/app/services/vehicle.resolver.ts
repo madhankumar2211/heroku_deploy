@@ -7,7 +7,6 @@ import {
 import { Observable, of } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
-import { UsersService } from '../services/users.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,7 @@ import { UsersService } from '../services/users.service';
 export class VehicleResolver implements Resolve<boolean> {
   vehicles : any;
 
-  constructor(private http: HttpClient,public uS:UsersService) { }
+  constructor(private http: HttpClient) { }
 
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {

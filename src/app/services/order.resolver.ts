@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   Router, Resolve,
@@ -5,19 +6,14 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { UsersService } from '../services/users.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersResolver implements Resolve<boolean> {
-  users : any;
-
-  constructor(private http: HttpClient,public uS:UsersService) { }
+export class OrderResolver implements Resolve<boolean> {
+  constructor(private http: HttpClient) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.http.get("/user/user")
-
+    return this.http.get("/user/vieworder")
   }
 }

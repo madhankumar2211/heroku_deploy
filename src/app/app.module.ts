@@ -28,6 +28,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { HeadingComponent } from './heading/heading.component';
 import { UsersResolver } from './services/users.resolver';
 import { VehicleResolver } from './services/vehicle.resolver';
+import { OrderResolver } from './services/order.resolver';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { VehicleResolver } from './services/vehicle.resolver';
       
     ])
     ],
-  providers: [{provide:HTTP_INTERCEPTORS ,useClass:AuthInterceptorService,multi :true},UsersResolver,VehicleResolver,HttpClient],
+  providers: [{provide:HTTP_INTERCEPTORS ,useClass:AuthInterceptorService,multi :true},UsersResolver,VehicleResolver,HttpClient,OrderResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
