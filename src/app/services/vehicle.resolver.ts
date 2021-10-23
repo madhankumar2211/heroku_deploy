@@ -15,12 +15,10 @@ import { UsersService } from '../services/users.service';
 export class VehicleResolver implements Resolve<boolean> {
   vehicles : any;
 
-  constructor(public uS:UsersService) { }
+  constructor(private http: HttpClient,public uS:UsersService) { }
+
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    this.uS.vehicle().subscribe((data) => {  
-      this.vehicles = data 
-    })
-    return of(this.vehicles);
+    return this.http.get("/admin/vehicleviewnew")
   }
 }
