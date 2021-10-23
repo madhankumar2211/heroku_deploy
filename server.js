@@ -6,7 +6,7 @@ let server = require('http').Server(app);
 const admin = require('./admin');
 
 app.use('/admin',admin);
-app.use(express.static(__dirname + "/dist"))
+app.use(express.static(__dirname + '\dist'))
 
 //body parser
 app.use(express.urlencoded({ extended: true }));
@@ -25,12 +25,7 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-    MongoClient.connect(url, (err, conn) => {
-        var db = conn.db('merit');
-        db.collection('packers_users').find().toArray((err, data) => {
-            res.send(data)
-        })
-    })
+    res.status(200).send("hii");
 })
 
 app.get("/fav")
