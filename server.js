@@ -28,7 +28,6 @@ app.get('/', (req, res) => {
     res.status(200).send("hii");
 })
 
-app.get("/fav")
 //create
 app.post('/register', (req, res) => {
     var hashPassword = bcrypt.hashSync(req.body.psw, 8);
