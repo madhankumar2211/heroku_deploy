@@ -14,33 +14,33 @@ export class ProfileService {
   // }
   //profile
   getSpecifiedUser() {
-    return this.http.get("http://localhost:7080/user")
+    return this.http.get("/user")
   }
 
 
 
   updateuser(user: any) {
     //console.log('user id::', user._id);
-    return this.http.put(`http://localhost:7080/updateuser/${user._id}`, user);
+    return this.http.put(`/updateuser/${user._id}`, user);
   }
   //order
   getallorder() {
-    return this.http.get(`http://localhost:7080/vieworder`);
+    return this.http.get(`/vieworder`);
   }
 
   cancelorder(order) {
     //console.log("order id :: ", order._id);
-    return this.http.put("http://localhost:7080/updateorder", order);
+    return this.http.put("/updateorder", order);
   }
 
   //contact us
   add(x: any) {
-    return this.http.post<any>('http://localhost:7080/contactinfo', x);
+    return this.http.post<any>('/contactinfo', x);
   }
   //tracking
   getListOne(tid){
     //console.log(tid);
     
-    return this.http.post<any>('http://localhost:7080/tracking',tid)
+    return this.http.post<any>('/tracking',tid)
   }
 }

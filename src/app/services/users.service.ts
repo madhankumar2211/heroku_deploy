@@ -18,16 +18,16 @@ export class UsersService {
 
 
   forgot(x) {
-    return this.http.post(this.URL + '/forgot', x);
+    return this.http.post('/forgot', x);
   }
   updatepassword(x) {
-    return this.http.put(this.URL + '/updatepassword', x);
+    return this.http.put('/updatepassword', x);
   }
   login(x) {
-    return this.http.post<any>(this.URL + '/login', x);
+    return this.http.post<any>('/login', x);
   }
   register(x) {
-    return this.http.post<any>(this.URL + '/register', x);
+    return this.http.post<any>('/register', x);
   }
   logout() {
     this.isloggedin.next(false)
@@ -36,7 +36,7 @@ export class UsersService {
   }
 
   loggedUser(){
-    return this.http.get(this.URL + '/user');
+    return this.http.get('/user');
   }
   autologin(){
     this.isloggedin.next(true)
@@ -55,10 +55,10 @@ export class UsersService {
   //-------------------------------------------------------------------
 
   profile() {
-    return this.http.get(this.URL + '/Profile');
+    return this.http.get('/Profile');
   }
   // book() {
-  //   return this.http.get(this.URL + '/Payment')
+  //   return this.http.get('/Payment')
   // }
 
 
@@ -75,10 +75,10 @@ export class UsersService {
   //order table
 
   add(x:any) {
-    return this.http.post<any>(this.URL + '/booking', x);
+    return this.http.post<any>('/booking', x);
   }
   addquote(y:any) {
-    return this.http.post<any>(this.URL + '/insertquote', y);
+    return this.http.post<any>('/insertquote', y);
   }
   vehicle(){
     return this.http.get<any>('/vehicleviewnew');
@@ -86,6 +86,6 @@ export class UsersService {
 
   //payment
   addpayment(x:any) {
-    return this.http.post<any>(this.URL + '/addpaymentinfo', x);
+    return this.http.post<any>('/addpaymentinfo', x);
   }
 }
