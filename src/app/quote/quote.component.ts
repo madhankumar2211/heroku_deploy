@@ -37,6 +37,8 @@ export class QuoteComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.vechile = this.rs.vechiles
+
     
     //console.log(Country.getAllCountries())
     //console.log(State.getStatesOfCountry("IN"))
@@ -47,11 +49,6 @@ export class QuoteComponent implements OnInit {
 
     this.Products = ['Apartment', 'Office', 'Furniture', 'Fragile products', 'Goods', 'Others']
 
-
-      this.rs.vehicle().subscribe((data) => {
-      this.vechile = data
-    
-      })
 
       this.quoteForm=this.qf.group({
         Cus_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],

@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
     public router : Router) { }
 
   ngOnInit(): void {
+    this.uS.vehicle();
+    console.log(this.uS.vechiles);
     this.uS.isloggedin.subscribe((stat)=>{this.loginstatus=stat})
   }
 

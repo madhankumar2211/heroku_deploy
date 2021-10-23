@@ -82,7 +82,9 @@ export class UsersService {
     return this.http.post<any>('/insertquote', y);
   }
   vehicle(){
-    return this.http.get<any>('/vehicleviewnew');
+    return this.http.get<any>('/vehicleviewnew').subscribe((data) => {
+      this.vechiles = data
+    });
   }
 
   //payment
