@@ -15,6 +15,8 @@ export class BooknowComponent implements OnInit {
 
 
   constructor(private router: Router, public fb: FormBuilder, public rs: UsersService, public vr : ActivatedRoute) {
+    console.log("hii");
+    
     this.vr.data.subscribe((data) => {
       this.vechile = data.vh
     })
