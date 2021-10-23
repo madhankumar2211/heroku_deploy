@@ -6,7 +6,7 @@ let server = require('http').Server(app);
 const admin = require('./admin');
 
 app.use('/admin',admin);
-app.use(express.static(__dirname + '\dist'))
+app.use(express.static(__dirname + './dist/app/index.html'))
 
 //body parser
 app.use(express.urlencoded({ extended: true }));
