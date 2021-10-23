@@ -37,6 +37,8 @@ export class UsersService {
   }
 
   loggedUser(){
+    console.log("get user");
+    
     return this.http.get('/user');
   }
   autologin(){
@@ -82,7 +84,7 @@ export class UsersService {
     return this.http.post<any>('/insertquote', y);
   }
   vehicle(){
-    return this.http.get<any>('/vehicleviewnew');
+    return this.http.get<any>('/admin/vehicleviewnew');
   }
 
   //payment

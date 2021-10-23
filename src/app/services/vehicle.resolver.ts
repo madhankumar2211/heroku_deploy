@@ -22,6 +22,9 @@ export class VehicleResolver implements Resolve<boolean> {
       console.log(data);
         
       this.vehicles = data
+    },(err) =>{
+      console.log(err);
+      
     })
     return of(this.vehicles);
   }

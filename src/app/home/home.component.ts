@@ -9,11 +9,6 @@ import { UsersService } from '../services/users.service';
 export class HomeComponent implements OnInit {
 
   constructor(public uS : UsersService) { 
-    this.uS.loggedUser().subscribe((data) => {
-      console.log(data);
-      
-      this.uS.user = data
-    })
   }
 
   ngOnInit(): void {     
