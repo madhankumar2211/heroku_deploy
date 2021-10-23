@@ -17,7 +17,7 @@ export class UsersResolver implements Resolve<boolean> {
   constructor(private http: HttpClient,public uS:UsersService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.http.get("/user/user")
+    return this.http.get("/admin/user")
 
   }
 }

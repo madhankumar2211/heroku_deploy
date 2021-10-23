@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators,FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Country, State, City } from 'country-state-city';
 import { UsersService } from '../services/users.service';
 
@@ -14,7 +15,13 @@ import { UsersService } from '../services/users.service';
 })
 export class QuoteComponent implements OnInit {
 
-  constructor(public qf: FormBuilder,public rs: UsersService) { }
+  vechile: any;    
+
+  constructor(public qf: FormBuilder,public rs: UsersService,public ur : ActivatedRoute) {
+    this.ur.data.subscribe((data) => {
+      this.vechile = data.vh
+    })
+   }
 
 
   quoteForm:any;    
@@ -26,7 +33,6 @@ export class QuoteComponent implements OnInit {
   countries: any;  
   record: any;
   price: any;    
-  vechile: any;    
   Tlatlong: any;
   Flatlong: any;
   Products: any;
@@ -37,7 +43,7 @@ export class QuoteComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.vechile = this.rs.vechiles
+    
 
     
     //console.log(Country.getAllCountries())

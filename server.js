@@ -4,12 +4,10 @@ const app = express();
 let server = require('http').Server(app);
 
 const admin = require('./admin');
-const user = require('./user');
 
 var path = require('path');
 
 app.use('/admin',admin);
-app.use('/user',user);
 app.use(express.static(__dirname + '/dist/app'))
 
 //body parser

@@ -10,6 +10,8 @@ import { UsersService } from '../services/users.service';
 })
 export class ProfileComponent implements OnInit {
   specifiedUser :any;
+  allorder : any;
+
   constructor( public ps : ProfileService,
               public router : Router,
               public uS : UsersService,
@@ -17,10 +19,10 @@ export class ProfileComponent implements OnInit {
               { 
                 this.ur.data.subscribe((data) => {
                   this.specifiedUser = data.user
+                  this.allorder = data.order
                 })
               }
   user:any;
-  allorder : any;
   count : boolean = true;
   completed : boolean = true; 
   cancelled : boolean = true; 
@@ -29,8 +31,8 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     const p: any = '*'
     this.psw = p.repeat(5)
-    this.ps.getallorder().subscribe((o)=>{
-      this.allorder = o;
+    // this.ps.getallorder().subscribe((o)=>{
+    //   this.allorder = o;
       this.allorder.forEach(element => {
         if(element.Record_status == 1){
           this.count = false
@@ -43,7 +45,7 @@ export class ProfileComponent implements OnInit {
         
       });
       
-    })
+    // })
     
   }
 
