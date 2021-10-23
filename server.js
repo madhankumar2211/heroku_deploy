@@ -10,6 +10,8 @@ app.use(express.static(__dirname + "/dist"))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const port = Process.env.PORT || 3000 ;
+
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
@@ -325,6 +327,6 @@ app.get("/vehicleviewnew",(req,res)=>{
 })
 
 
-app.listen(7080, () => {
-    console.log('App running on http://localhost:7080/');
+app.listen(port, () => {
+    console.log(port);
 });
