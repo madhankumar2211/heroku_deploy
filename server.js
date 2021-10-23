@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+let server = require('http').Server(app);
+
 const admin = require('./admin');
 
 app.use('/admin',admin);
@@ -10,7 +12,7 @@ app.use(express.static(__dirname + "/dist"))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const port = Process.env.PORT || 3000 ;
+const port = Process.env.PORT || 7080 ;
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -327,6 +329,6 @@ app.get("/vehicleviewnew",(req,res)=>{
 })
 
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(port);
 });
