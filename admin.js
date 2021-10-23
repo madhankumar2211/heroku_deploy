@@ -125,6 +125,29 @@ router.get("/vehicleviewnew",(req,res)=>{
     })
 })
 
+function verifyToken(req, res, next) {
+	try {
+		if (!req.headers.authorization) {
+			return res.status(401).send({link : '/Login'});
+		}
+		let token = req.headers.authorization.split(' ')[1];
+
+		if (token === 'null') {
+			return res.status(401).send({link : '/Login'});
+		}
+
+		const payload =  jwt.verify(token, 'secret_key_goes');
+
+		if (!payload) {
+			return res.status(401).send({link : '/Login'});
+		}
+		req.userId = payload._id;
+		next();
+	} catch(e) {
+		return res.status(401).send({link : '/Login'});
+	}
+}
+
 router.get("/user",verifyToken, function (req, res) {
     let token = req.headers.authorization.split(' ')[1];
     const payload =  jwt.verify(token, 'secret_key_goes');   
