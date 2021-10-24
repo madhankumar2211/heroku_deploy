@@ -28,18 +28,4 @@ export class HeaderComponent implements OnInit {
     this.uS.logout();
   }
 
-  menuOpen() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-  menuClose(){
-      var x = document.getElementById("myTopnav");
-      x.className = "topnav";
-    
-  } 
-
 }
