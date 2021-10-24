@@ -14,6 +14,6 @@ export class OrderResolver implements Resolve<boolean> {
   constructor(private http: HttpClient) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.http.get("/admin/vieworder")
+    return this.http.get("/users/vieworder")
   }
 }

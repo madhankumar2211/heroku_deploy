@@ -79,11 +79,17 @@ const routes: Routes = [
   
   {
     path : 'Quote',
-    component : QuoteComponent
+    component : QuoteComponent,
+    resolve : {
+      vh : VehicleResolver
+    }
   },
   {
     path : 'Update',
-    component : UpdateprofieComponent
+    component : UpdateprofieComponent,
+    resolve : {
+      user : UsersResolver
+    }
   },
 ];
 

@@ -33,14 +33,12 @@ export class UpdateprofieComponent implements OnInit {
 
     
       
-      this.pS.getSpecifiedUser().subscribe((value : any) => {
-        this.regForm.get('name').setValue(value.name),
-        this.regForm.get('email').setValue(value.email),
-        this.regForm.get('phone').setValue(value.phone),
-        this.regForm.get('psw').setValue(value.psw),
-        this.regForm.get('_id').setValue(value._id)
-        //console.log(value);
-        
+      this.aR.data.subscribe((value : any) => {
+        this.regForm.get('name').setValue(value.user.name),
+        this.regForm.get('email').setValue(value.user.email),
+        this.regForm.get('phone').setValue(value.user.phone),
+        this.regForm.get('psw').setValue(value.user.psw),
+        this.regForm.get('_id').setValue(value.user._id)       
       });
     
   }

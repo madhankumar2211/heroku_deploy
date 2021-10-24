@@ -325,14 +325,14 @@ app.post('/addpaymentinfo',verifyToken,(req,res) => {
     });
 })
 
-app.get("/vehicleviewnew",(req,res)=>{
-    MongoClient.connect(url,function(err,conn){
-        var db=conn.db("merit")
-        db.collection('vehiclenew').find().toArray((err,data) => {
-            res.send(data)
-        })
-    })
-})
+// app.get("/vehicleviewnew",(req,res)=>{
+//     MongoClient.connect(url,function(err,conn){
+//         var db=conn.db("merit")
+//         db.collection('vehiclenew').find().toArray((err,data) => {
+//             res.send(data)
+//         })
+//     })
+// })
 
 
 server.listen(port, () => {
