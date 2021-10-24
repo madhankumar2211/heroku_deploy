@@ -1,47 +1,27 @@
 
 
-*{
-    padding: 0;
-    margin:0;
-}
+
 
 /*why choose us*/
 
+.career-banner img {
+    width: 100%;
+    }
 
-img{
-    
-    max-width:100%;
-    height:auto;
+.wrapper h2 {
+text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+font-size: 4em;
+margin: 1em 0 0;
 }
-p{
-    line-height:1.7;
-    margin:0;
-    font-size:16px;
+.line {
+width: 350px;
+height: 3px;
+background:skyblue;
+margin: 0 auto 60px auto;
 }
-.title-section{
-    padding-bottom:50px;
-    text-align:center;
 
-}
-.title-section h1{
-	margin-top:60px;
-}
-.title-section-main{
-    font-size:35px;
-    font-weight:600px;
-    text-transform:capitalize;
-	margin-top:0px;
-
-}
-.title-section-desc{
-    font-size:16px;
-    padding-top:15px;
-    color: #666;
-    max-width: 60%;
-    display:block;
-    margin: auto;
-    line-height:1.7;
-}
 #why-choose-us{
     padding-top: 30px;
     padding-bottom:50px;
@@ -51,70 +31,76 @@ p{
     padding-top:10px;
     
 }
-a{
-    text-decoration: none;
-}
-a:focus a:hover{
-    text-decoration: none;
-    
-}
-.wcu-text-box{
-    width:90%;
-    height:85%;
-    box-shadow:0 0 10px #ccc;
-    padding:25px;
-    margin-bottom:30px;
-    text-align:center;
-}
-.wcu-text-box-icon{
-    font-size:35px;
-    padding-bottom:20px;
-    color:#42a4ff
-}
-.wcu-text-box-title{
-    font-size:20px;
-    text-transform:capitalize;
-    font-weight:600;
-    padding-bottom:10px;
-}
-.wcu-text-box-desc p{
-    font-size:15px;
-    text-align:initial;
 
-}
-.wcu-text-box-blue{
-    background:#42a4ff none repeat scroll 0 0;
+   
+    .single-service {
+    text-align: center;
     overflow: hidden;
-    color: #fff;
-}
-.wcu-text-box-blue .wcu-text-box-icon{
-    color: #fff;
-}
+    position: relative;
+    cursor: pointer;
+    padding:10%;
+    }
+    .social {
+    width: 60px;
+    height: 60px;
+    background: black;
+    border-radius: 50%;
+    margin: 5% auto;
+    }
+    .social i {
+    font-size: 30px;
+    padding: 15px;
+    color: white;
+    }
+    
+    
+    
+    .single-service h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:black;
+    font-weight: 600;
+    }
+    
+    .single-service p {
+     color: rgb(0, 19, 128);
+    font-size: 17px;
+    line-height:27px;
+    
+    }
+    .single-service span {
+    position: absolute;
+    top: 0;
+    left: -110%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.2),rgb(19, 104, 202));
+    transition: .7s;
+    transform: skewX(10deg);
+    }
+    
+    .single-service:hover span {
+    left: 110%;
+    }
+    
 /*why choose us responsive*/
 @media(max-width:770px){
-    .title-section-main{
-        font-size:25px;
-    }
-    
-    .title-section-desc{
-        max-width:100%;
-    }
-    .wcu-text-box-blue{
-        background: #fff none repeat scroll 0 0;
-        color:#444;
-    }
-    .wcu-text-box-blue .wcu-text-box-icon{
-        color: #4214ff
-    }
+    .wrapper h2 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 2em;
+        margin: 1em 0 0;
+        }
 }
 @media(min-width:768px) and (max-width:1023px){
-    .wcu-text-box-blue{
-        background: #fff none repeat scroll 0 0;
-        color:#444;
+    img{
+    
+        max-width:50%;
+        height:auto;
     }
-    .wcu-text-box-blue .wcu-text-box-icon{
-        color: #4214ff
-    }
+    
+   
 
 }
 /*our partners*/
@@ -130,9 +116,10 @@ a:focus a:hover{
 .slide-Track{
  display: flex;
  width: 100%;
+ height:60%;
  animation:scroll 30s linear infinite;
-}
-/* @keyframes scroll{
+ }
+/*@keyframes scroll{
     0%{
         transform: translateX(0);
     }
@@ -143,7 +130,7 @@ a:focus a:hover{
     100%{
         transform: translateX(-100%);
     }
-} */
+}  */
 .slide{
     height: 200px;
     width: 250px;
@@ -152,7 +139,7 @@ a:focus a:hover{
     padding:15px;
     perspective:100px;
 }
-img{
+ img{
     width:100%;
     transition:transform 1%;
 }
@@ -178,17 +165,49 @@ img:hover{
     top:0;
     transform: rotateZ(100deg);
 }
+@media(max-width:800px)
+{
+    .slider{
+        height: 250px;
+        margin: auto;
+        position: relative;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        overflow:hidden;
+    }
+    .slide-Track{
+        display: flex;
+        width: 100%;
+        animation:scroll 30s linear infinite;
+       }
+    .slide{
+        height: 200px;
+        width: 250px;
+        display: flex;
+        align-items:center;
+        padding:15px;
+        perspective:100px;
+    }
+    .slide img{
+        width:100%;
+        transition:transform 1%;
+    }
+    img:hover{
+        transform:translateZ(20px);
+        }
+}
 /*gallery*/
 #head h1{
     
 	text-align:center;
-	top:500px;
+	top:600px;
 
 }
 .contain{
     width: 1300px;
     position: relative;
-    top:50px;
+    top:100px;
     display: flex;
     text-align: center;
     align-items: center;
@@ -228,6 +247,7 @@ img:hover{
     transform: scaleY(1);
 
 }
+
 /*gallery responsive*/
 @media(max-width:800px)
 {
@@ -266,6 +286,3 @@ img:hover{
         padding-bottom: 50px;
     }
 }
-
-
-
