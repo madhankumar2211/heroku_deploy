@@ -47,7 +47,7 @@
 }
 
 .pbar{
-  border: 1px solid;
+  /* border: 1px solid; */
   border-radius: 10px;
   width: 630px;
   height: 80px;
@@ -301,7 +301,7 @@ input[type='date'] {
 }
 
 #sec3 {
-  border: 1px solid;
+  /* border: 1px solid; */
   border-radius: 10px;
   width: 630px;
   padding: 20px;
@@ -471,7 +471,7 @@ input[type='area'] {
     background-color: #d1dde6;
   }
   #sec3 {
-    border: 1px solid;
+    /* border: 1px solid; */
     border-radius: 10px;
     width: 320px;
     padding: 15px;
