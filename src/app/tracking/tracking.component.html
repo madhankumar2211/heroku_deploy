@@ -1,162 +1,64 @@
-<html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+<form [formGroup] = "alldata" (ngSubmit)="getall()">
+    <input type="text" formControlName = "tid" placeholder="Enter the order id">
 
-<head>
-
-    <link rel="stylesheet" href="tr.css" />
-
-</head>
-
-<body>
-    <div class="Heading">
-        <h1 class="title">TRACK YOUR SHIPMENT</h1>
+    <div *ngIf="submitted && fid.errors">
+        <h5 *ngIf="fid.errors?.required" class="valid">
+        *Required Field
+        </h5>
     </div>
 
-    <div id="all_all">
-        <div id="img_side">
-            <img src="../../assets/images/k6.jfif" /> &nbsp; &nbsp;
-        </div>
-        <form [formGroup]="alldata" (ngSubmit)="getall()">
-            <div id="box">
-                <br />
-                <br />
-                <br />
+    <button type="submit">Track</button>
+</form>
 
-                <input type="text" name="txt" placeholder="Name" formControlName="nam"><br /><br />
-                <h5 style="color:royalblue">
-                    <div *ngIf="f.nam.touched && f.nam.errors?.required">
-                        Name is required.
-                    </div>
-                </h5>
-
-                <!-- <input type="number" name="mob" placeholder="Mobile" formControlName="mob"><br/><br/>
-               <h5><div *ngIf="f.mob.touched && f.mob.errors?.required">Mobile Number is required.</div>  
-                <div *ngIf="f.mob.touched && f.mob.errors?.pattern">Please, Enter 10 digit Mobile Number.</div>  </h5>   -->
-                <br />
-                <input type="text" name="txt" placeholder="Track ID" pattern="[A-Z]{3}[0-9]{3}"
-                    formControlName="tid"><br /><br />
-                <h5 style="color:royalblue">
-                    <div *ngIf="f.tid.touched && f.tid.errors?.required">
-                        OrderId is required.
-                    </div>
-                </h5>
-                <!-- <label>Booking Date</label><br/>
-               <input type ="date" id="ordat"  formControlName="bd"  >
-                  <div *ngIf="f.bd.touched && f.bd.errors?.required">
-                   date is required.
-                  </div> -->
-                <br />
-                <br />
-                <br />
-                <!-- <button type="submit"  value="Track">Track</button>*/ -->
-                <input type="submit" value="Track">
-                <!-- <a href="#par">mmm</a> -->
-
-
-
+<div class="container padding-bottom-3x mb-1">
+        <div class="card mb-3">
+          <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Tracking Order No - </span><span class="text-medium">34VB5540K83</span></div>
+          <div class="d-flex flex-wrap flex-sm-nowrap justify-content-between py-3 px-2 bg-secondary">
+            <div class="w-100 text-center py-1 px-2"><span class="text-medium">Shipped Via:</span> UPS Ground</div>
+            <div class="w-100 text-center py-1 px-2"><span class="text-medium">Status:</span> Checking Quality</div>
+            <div class="w-100 text-center py-1 px-2"><span class="text-medium">Expected Date:</span> SEP 09, 2017</div>
+          </div>
+          <div class="card-body">
+            <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-cart"></i></div>
+                </div>
+                <h4 class="step-title">Confirmed Order</h4>
+              </div>
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-config"></i></div>
+                </div>
+                <h4 class="step-title">Processing Order</h4>
+              </div>
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-medal"></i></div> 
+                </div>
+                <h4 class="step-title">Quality Check</h4>
+              </div>
+              <div class="step">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-car"></i></div>
+                </div>
+                <h4 class="step-title">Product Dispatched</h4>
+              </div>
+              <div class="step">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-home"></i></div>
+                </div>
+                <h4 class="step-title">Product Delivered</h4>
+              </div>
             </div>
-        </form>
-
-
-
-
-
-    </div>
-
-    <section>
-
-        <div id="sec1">
-            <h4 style="color: blue">TRACKING ID : {{track}}</h4>
+          </div>
         </div>
-        <br />
-        <div class="pbar">
-
-            <ul   data-rows="2" data-columns="2">
-                <li>
-                    <h5 style="color: blue">STATUS : {{status}}</h5>
-                </li>
-                <li>
-                    <h5 style="color:blue">INCHARGE NO: {{phone}} </h5>
-                </li>
-                <li>
-                    <h5 style="color: blue">BOOKING DATE :{{bdate}} </h5>
-                </li>
-                <li>
-                    <h5 style="color: blue">DELIVERY DATE :{{ddate}} </h5>
-                </li>
-
-            </ul>
-
+        <div class="d-flex flex-wrap flex-md-nowrap justify-content-center justify-content-sm-between align-items-center">
+          <div class="custom-control custom-checkbox mr-3">
+            <input class="custom-control-input" type="checkbox" id="notify_me" checked="">
+            <label class="custom-control-label" for="notify_me">Notify me when order is delivered</label>
+          </div>
+          <div class="text-left text-sm-right"><a class="btn btn-outline-primary btn-rounded btn-sm" href="orderDetails" data-toggle="modal" data-target="#orderDetails">View Order Details</a></div>
         </div>
-        <br />
-        
-        <div id="sec3">
-            <div class="stimg">
-                <img src="../../assets/images/STRAT.jfif" width="80px" />
-
-                <p style="color:green">START</p>
-            </div>
-
-            <div class="stimg">
-                <img src="../../assets/images/RUN.png" width="80px" />
-                <p style="color:orange">GOING</p>
-            </div>
-
-
-            <div class="stimg">
-                <img src="../../assets/images/HHOME.png" width="80px" />
-
-                <p style="color:blue">REACH</p>
-                
-                   
-        
-            
-            </div>
-             
-        
-        </div>
-         <div class="pbar1">
-            <progress class="file" value={{bar}} max="100"> 32% </progress>
-
-        </div>  
-        <br />
-        <br />
-        <div id="par">
-            <p>
-                Tracking Department experts will have the total information about all the consignments happening,
-                Tacking department experts will be updating time to time where exactly the consignment is we have
-                specified
-                tracking systems to track the vehicles and
-                clear the blocks and reach the destination in time and safely
-
-            </p>
-        </div>
-        <br /><br />
-        <div id="feed">
-            <div id="imgg">
-                <img src="../../assets/images/feeed.jfif" height="351px" width="300px" />&nbsp; &nbsp;
-            </div>
-
-            <div id="box3">
-                <h4><span>COMMENT PLEASE!!!</span></h4>
-                <input type="text" Placeholder="Email" id="msg" required /><br><br>
-
-                <label>Suggestion</label><textarea id="msg" rows="8" cols="30" required></textarea><br><br>
-
-                <a href="" onclick="alert( ' ThankYou  ')">POP</a><br>
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-        </div>
-    </section>
-</body>
-
-</html>
+      </div>

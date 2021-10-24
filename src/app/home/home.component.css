@@ -95,7 +95,7 @@ section{
 }
 .about .title{
 	position:relative;
-    top:30px;
+    top:50px;
 	text-align:center;
 	font-size:40px;
 	font-weight:500;
@@ -119,6 +119,7 @@ section{
 	align-items:center;
 	justify-content:space-between;
 	margin:auto;
+	padding-top: 40px;
 	
 }
 .about .about-content .left{
