@@ -21,9 +21,6 @@ export class HeaderComponent implements OnInit {
     
     this.router.navigateByUrl('/Profile');
   }
-  tracking(){
-    this.router.navigateByUrl('/Tracking');
-  }
   logout(){      
     this.uS.logout();
   }
