@@ -71,6 +71,11 @@
     margin-top: 30px;
 }
 
+.card-link{
+    padding: 5px;
+    background-color: darkorange;
+}
+
 
 /* .profile_pic{
     margin-right: 30px;
@@ -158,18 +163,18 @@
     font-size: 1rem;
 }
 .current_order .card-text{
-    color: rgb(87, 214, 87);
+    color: #0e6811;
     padding: 5px;
     font-size: 1rem;
 
 }
 .card{
     margin: 5px;
-    background-color: rgb(10, 153, 146);
+    background-color: #1b9bff4a;
     padding-left: 30px;
     padding-top: 15px;
     padding-bottom: 15px;
-    box-shadow: 5px 10px rgba(123, 233, 123, 0.486)
+    box-shadow: 5px 10px #1212127c  
 
 }
 
@@ -180,7 +185,7 @@
 .card-title{
     /* padding-left: 70px; */
     font-size: 1.5rem;
-    color:white;
+    color:#1209a7;
     
 }
 
