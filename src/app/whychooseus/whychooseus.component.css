@@ -6,6 +6,7 @@
 
 .career-banner img {
     width: 100%;
+    height: 600px;
     }
 
 .wrapper h2 {
@@ -205,13 +206,13 @@ img:hover{
 
 }
 .contain{
-    width: 1300px;
+    width: 100%;
     position: relative;
-    top:100px;
+    /* top:100px; */
     display: flex;
     text-align: center;
     align-items: center;
-	margin-left:100px;
+	/* margin-left:100px; */
 	
 }
 
