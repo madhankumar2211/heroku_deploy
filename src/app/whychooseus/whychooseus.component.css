@@ -119,6 +119,7 @@ margin: 0 auto 60px auto;
  width: 100%;
  height:60%;
  animation:scroll 30s linear infinite;
+ justify-content: space-around;
  }
 /*@keyframes scroll{
     0%{
