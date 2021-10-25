@@ -97,7 +97,7 @@ margin: 0 auto 60px auto;
 @media(min-width:768px) and (max-width:1023px){
     img{
     
-        max-width:50%;
+        max-width:100%;
         height:auto;
     }
     
@@ -270,6 +270,10 @@ img:hover{
         position:absolute;
         top:70px;
         width: 350px;
+    }
+    .career-banner img {
+        width: 100%;
+        height: 600px;
     }
 }
 @media(min-width:801px) and (max-width:1800px){
