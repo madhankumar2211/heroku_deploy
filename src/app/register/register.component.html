@@ -19,7 +19,7 @@
               </div>
               <div *ngIf = "email.errors">
                   <h5 *ngIf="email.touched && email.errors?.email" class="valid">
-                    *Not a Valid email
+                    *Not a Valid email 
                   </h5>
               </div>
               <input type="number" class="field" placeholder="Phone Number" formControlName = "phone">
@@ -30,7 +30,7 @@
               </div>
               <div *ngIf = "phone.errors">
                   <h5 *ngIf="phone.touched && phone.errors?.pattern" class="valid">
-                    *Must be 10 digit
+                    *Must be 10 digit & start with 6-9
                   </h5>
               </div>
               <input type="password" class="field" placeholder="New Password" formControlName = "psw">
