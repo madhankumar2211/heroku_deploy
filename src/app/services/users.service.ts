@@ -48,8 +48,6 @@ export class UsersService {
   }
   
   getToken() {
-    //console.log(localStorage.getItem('token'));
-    
     return localStorage.getItem('token');
   }
 
@@ -58,10 +56,6 @@ export class UsersService {
   profile() {
     return this.http.get('/Profile');
   }
-  // book() {
-  //   return this.http.get('/Payment')
-  // }
-
 
 
   logoutuser() {
