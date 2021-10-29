@@ -1,4 +1,4 @@
-<!-- <nav class="header">
+<nav class="header">
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
@@ -16,26 +16,4 @@
         <li><a routerLink="/Login" *ngIf="!loginstatus">LOGIN</a></li>
         <li><a (click)="logout()" *ngIf="loginstatus">LOGOUT</a></li>
     </ul>
-</nav> -->
-
-<nav>
-    <input id="nav-toggle" type="checkbox" />
-    <div class="logo"><img src="../../assets/images/logo5.jpg" class="main-logo"></div>
-    <ul class="links">
-        <li><a routerLink="/Home">HOME</a></li>
-        <li><a routerLink="/Service">SERVICES</a></li>
-        <li><a routerLink="/Whychooseus">WHYCHOOSEUS</a></li>
-        <li><a routerLink="/Booknow">BOOKNOW</a></li>
-        <li><a routerLink="/Tracking">TRACKING</a></li>
-        <li><a routerLink="/Contactus">CONTACTUS</a></li>
-        <li><a (click)="profile()" *ngIf="loginstatus">PROFILE</a></li>
-        <li><a routerLink="/Login" *ngIf="!loginstatus">LOGIN</a></li>
-        <li><a (click)="logout()" *ngIf="loginstatus">LOGOUT</a></li>
-    </ul>
-    <label for="nav-toggle" class="icon-burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </label>
-  </nav>
-  
+</nav>
