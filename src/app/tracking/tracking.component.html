@@ -11,11 +11,11 @@
                         <div class="subhed">TRACKING</div>
                         <input type="text" name="txt" placeholder="Track ID" pattern="[A-Z][A-Z]{9}"
                             formControlName="tid"><br /><br />
-                        <h5 style="color:royalblue">
+                        <h5 style="color:red">
                             <div *ngIf="f.tid.touched && f.tid.errors?.required">
                                 OrderId is required.
                             </div>
-                            <div *ngIf="error">
+                            <div *ngIf="iderr">
                                 Wrong order Id
                             </div>
                         </h5>

@@ -17,7 +17,7 @@ export class TrackingComponent implements OnInit {
   bdate:any;
   ddate : any;
   bar:any;
-  error:boolean = false;
+  iderr:boolean = false;
 
   // constructor(public iS:InformService,public http:HttpClient) { }
   alldatas:any
@@ -74,7 +74,9 @@ get f(){
         }
         
       },(err) => {
-          this.error = true;
+        console.log(err);
+        
+          this.iderr = true;
       })
    
 

@@ -11,11 +11,11 @@ box-sizing: border-box;
 
 .mainhead{
 position:relative;
-
 text-align:center;
 font-size:20px;
 font-weight:300;
-margin-bottom:60px;
+padding-top: 20px;
+margin-bottom:20px;
 padding-bottom:20px;
 font-family:sans-serif;
 }
@@ -134,8 +134,6 @@ input[type='number']
     text-align:center;
     font-size:10px;
     font-weight:100;
-    margin-bottom:60px;
-    padding-bottom:20px;
     font-family:sans-serif;
   }
   .box {
