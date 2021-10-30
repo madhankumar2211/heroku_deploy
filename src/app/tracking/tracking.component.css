@@ -56,7 +56,8 @@ box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
 margin-left: 30px;
 margin-top: 2px;
   font-size: 30px;
-  font-style: oblique;
+    /* font-style: oblique; */
+
   color: blue;
   font-weight: bold;
   /*margin-left: 180px;*/
@@ -231,7 +232,8 @@ margin-left: 25px;
   height: 80px;
   font-size: 20px;
   font-weight: bold;
-  font-style: oblique;
+    /* font-style: oblique; */
+
   margin-left: 120px; 
   text-align: center;
  
@@ -240,7 +242,8 @@ margin-left: 25px;
   padding-top: 10px;
   width: 630px;
   height: 50px;
-  font-style: oblique;
+    /* font-style: oblique; */
+
   justify-content: space-evenly;
   font-weight: bold;
   font-size: 20px;
@@ -352,7 +355,8 @@ margin-left: 25px;
     #sec2 {
       width: 400px;
       height: 80px;
-      font-style: oblique;
+        /* font-style: oblique; */
+
       
       font-weight: bold;
       font-size: 20px;
