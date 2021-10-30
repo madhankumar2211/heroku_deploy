@@ -40,7 +40,7 @@ export class BooknowComponent implements OnInit {
 
   ngOnInit(): void {
     if(!this.rs.loggedIn()){
-      alert('You are a not Logged In user.....Still you can get Quote from us.\n For booking you need to log in..')
+      alert('You are not a Logged In user.....Still you can get Quote from us.\n For booking you need to log in..')
     }
 
 
